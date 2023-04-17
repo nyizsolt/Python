@@ -2,7 +2,6 @@ import wx
 
 from coventer_controller import ConverterController
 
-
 class ConverterPanel(wx.Panel):
     def __init__(self, parent):
         super().__init__(parent)
