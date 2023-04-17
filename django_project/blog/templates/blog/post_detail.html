@@ -1,0 +1,18 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+    <script type="text/javascript" src="{% static 'main.js' %}"></script>
+    <article class="media content-section">
+      <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2" href="#">{{ object.author }}</a>
+          <small class="text-muted">{{ object.date_posted }}</small>
+        </div>
+        <h2>{{ object.title }}</h2>
+        <p class="article-content">{{ object.content }}</p>
+        <button id="like-button" onclick=changeLike({{object.id}}) type="button" class="btn btn-primary">
+          {{ object.liked | yesno:"Unlike,Like" }}
+        </button>
+      </div>
+    </article>
+{% endblock content %}
